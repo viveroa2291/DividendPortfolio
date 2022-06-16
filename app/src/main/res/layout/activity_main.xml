@@ -18,11 +18,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="16dp"
+        >
     <com.jjoe64.graphview.GraphView
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="150dp"
@@ -30,6 +35,8 @@
         app:layout_constraintEnd_toEndOf="@id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="@id/textView"
         app:layout_constraintTop_toTopOf="@id/bottomNavigationView" />
+    </ScrollView>
+
     <FrameLayout
         android:id="@+id/flFragment"
         android:layout_width="match_parent"
