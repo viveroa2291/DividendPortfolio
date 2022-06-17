@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="409dp"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -18,34 +28,87 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-    <ScrollView
+
+    <TextView
+        android:id="@+id/description"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:padding="16dp"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="475dp"
+        android:padding="10dp"
+        android:text="This is an overview of your dividends throughout the years."
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
     <com.jjoe64.graphview.GraphView
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="150dp"
-        app:layout_constraintBottom_toBottomOf="@id/textView"
-        app:layout_constraintEnd_toEndOf="@id/bottomNavigationView"
-        app:layout_constraintStart_toStartOf="@id/textView"
-        app:layout_constraintTop_toTopOf="@id/bottomNavigationView" />
-    </ScrollView>
-
-    <FrameLayout
-        android:id="@+id/flFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="350dp"
+        android:layout_marginBottom="125dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <Button
+        android:id="@+id/all"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="350dp"
+        android:backgroundTint="@color/black"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="All"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chart"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <Button
+        android:id="@+id/twenty"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="300dp"
+        android:backgroundTint="@color/green"
+        android:padding="10dp"
+        android:text="2020"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="@+id/chart"
+        app:layout_constraintStart_toStartOf="@+id/chart"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <Button
+        android:id="@+id/twentyOne"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="100dp"
+        android:text="2021"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <Button
+        android:id="@+id/twentyTwo"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="350dp"
+        android:backgroundTint="@color/red"
+        android:text="2022"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -60,3 +123,5 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
